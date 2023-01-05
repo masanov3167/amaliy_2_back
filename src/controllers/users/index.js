@@ -43,7 +43,6 @@ class userController{
             const foundUser = await sqlData('select * from db_users where name = $1 and parol = $2', value.name, value.parol);
 
             if(foundUser.length == 0){
-                console.log(foundUser);
                 res.status(401).json({status: 401, success: false, message:`Name yoki parol no'tog'ri kiritildi`});
                 return
             }
